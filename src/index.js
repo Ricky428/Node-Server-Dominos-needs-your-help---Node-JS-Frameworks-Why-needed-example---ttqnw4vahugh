@@ -10,7 +10,7 @@ function handleServer(req, res) {
     res.setHeader("content-type","text/plain");
     res.statusCode=200;
 
-    res.send("Welcome to Dominos!")
+    res.write("Welcome to Dominos!")
     res.end();
   }
   else if(req.url==="/contact") {
