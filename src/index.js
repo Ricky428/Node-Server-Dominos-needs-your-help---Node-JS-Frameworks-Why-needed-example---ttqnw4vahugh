@@ -10,13 +10,13 @@ function handleServer(req, res) {
     res.setHeader("content-type","text/plain");
     res.statusCode=200;
 
-    res.write("Welcome to Dominos!")
+    res.send("Welcome to Dominos!")
     res.end();
   }
   else if(req.url==="/contact") {
     res.setHeader("content-type","application/json")
     res.statusCode = 200;
-    
+
     let info = {
         phone: '18602100000',
         email: 'guestcaredominos@jublfood.com'
@@ -25,9 +25,10 @@ function handleServer(req, res) {
     res.write(data);
     res.end()
   }
-  else  {
-    res.setHeader = 404;
+  else {
+    res.statusCode = 404;
     return res.end("404");
+  }
 }
 
 const PORT = 8081;
