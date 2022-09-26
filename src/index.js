@@ -25,6 +25,9 @@ function handleServer(req, res) {
     res.write(data);
     res.end()
   }
+  else  {
+    res.setHeader = 404;
+    return res.end("404");
 }
 
 const PORT = 8081;
